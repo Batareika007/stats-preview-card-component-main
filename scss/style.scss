@@ -1,6 +1,9 @@
+@import'colors';
+
 body {
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    // font-family: 'Lexend Deca', sans-serif;
     line-height: 1.5rem;
 }
 
@@ -12,7 +15,7 @@ h5,
 h6 {
     font-size: 3rem;
     line-height: 3rem;
-    font-weight: 500;
+    font-weight: 700;
 
     @media screen and (max-width: 425px) {
         font-size: 1.5rem;
@@ -71,27 +74,164 @@ span {
 }
 
 /* container max width -------------------  */
+body {
+    background-color: $main-background;
+    height: auto;
+}
 
 .container {
     width: 100%;
     margin: 0 auto;
-    padding: 0 1.5rem;
-    max-width: 1160px;
+    padding: 0 24px;
+    max-width: 1134px;
+}
+
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: $card-background;
+
+}
+
+.image-section {
+    width: 540px;
+    // height: 446px;
+    background-color: $accent;
+    background-image: url(../images/image-header-desktop.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &::after {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        background-color: hsla(277, 89%, 25%, 0.55);
+
+    }
+}
+
+.main-section {
+    padding: 78px 120px 65px 70px;
+    width: 570px;
 }
 
 .header {
-    margin: 0 auto;
-    background-color: blue;
+    color: $main-heading-stats;
+    margin-bottom: 24px;
+
+    h1 {
+
+        font-size: 2.5rem;
+    }
 }
 
-/* main -------------------  */
-.main {
-    margin: 0 auto;
-    flex: 1 1 auto;
+.header-color {
+    color: $accent;
 }
 
-/* footer -------------------  */
+.text {
+    margin-bottom: 50px;
+    color: $main-paragraph;
+    line-height: 2rem;
+}
+
 .footer {
-    margin: 0 auto;
-    background-color: red;
+    text-transform: uppercase;
+    display: flex;
+    // justify-content: space-between;
+
+}
+
+.footer-section {
+    &:not(:last-child) {
+        margin-right: 60px;
+    }
+
+}
+
+.footer__header {
+    color: $main-heading-stats;
+    font-size: 24px;
+}
+
+.footer__text {
+    color: $stat-headings;
+    font-family: 'Lexend Deca',
+        sans-serif;
+
+}
+
+@media screen and (max-width:1100px) {
+    .main-section {
+        padding: 34px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image-section {
+        width: auto;
+        height: 300px;
+    }
+
+    .main-section {
+        width: auto;
+        margin: 0 auto;
+    }
+
+    .footer {
+        justify-content: space-evenly;
+
+        .footer-section {
+            &:not(:last-child) {
+
+                margin-right: 0;
+                margin-bottom: 34px;
+            }
+        }
+    }
+
+}
+
+
+
+@media screen and (max-width:425px) {
+
+    .image-section {
+        height: 240px;
+        background-image: url(../images/image-header-mobile.jpg);
+    }
+
+    .header {
+        h1 {
+            font-size: 2rem;
+            line-height: 2.5rem;
+        }
+    }
+
+    .text {
+        margin: 0 auto 30px;
+        // max-width: 90%;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+
+    .footer-section {
+        &:not(:last-child) {
+
+            margin-right: 0;
+            margin-bottom: 34px;
+        }
+    }
 }
