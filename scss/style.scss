@@ -104,15 +104,16 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    background-blend-mode: multiply;
 
-    &::after {
-        content: '';
-        display: inline-block;
-        height: 100%;
-        width: 100%;
-        background-color: hsla(277, 89%, 25%, 0.55);
+    // &::after {
+    //     content: '';
+    //     display: inline-block;
+    //     height: 100%;
+    //     width: 100%;
+    //     background-color: hsla(277, 89%, 25%, 0.55);
 
-    }
+    // }
 }
 
 .main-section {
